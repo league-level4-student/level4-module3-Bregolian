@@ -10,7 +10,7 @@ class ExceptionsTest {
 	
 	//1. This is an example of how one might test that an exception is thrown.
 	//   It tests that an IndexOutOfBoundsException is thrown 
-	@Test
+	//@Test
 	public void testIndexOOBException() {
 		int[] vars = {0, 1, 2, 3};
 			
@@ -32,7 +32,13 @@ class ExceptionsTest {
 	//3. Complete the JUnit test method to test the divide method.
 	@Test
 	public void testDivideByZeroException() {
-		
+		try {
+			assertEquals(0.0 ,em.divide(10, 0));
+		}
+		catch(IllegalArgumentException e) {
+			e.printStackTrace();
+			assertEquals(0.0 ,em.divide(10, 0));
+		}
 	}
 	
 	//4. In the ExceptionMethods class, write a method called reverseString that takes a
@@ -42,7 +48,7 @@ class ExceptionsTest {
 	//5. Complete the JUnit test method to test the reverseStringMethod.
 	@Test
 	public void testReverseString() {
-		
+		assertEquals(new IllegalArgumentException() ,em.reverseString(""));
 	}
 	
 	
